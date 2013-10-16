@@ -1,0 +1,24 @@
+C:\Users\Le0\Documents\Visual Studio 2012\Projects\Accessor Generator\Accessor Generator\bin\Debug\Accessor Generator.dll
+C:\Users\Le0\Documents\Visual Studio 2012\Projects\Accessor Generator\Accessor Generator\bin\Debug\Accessor Generator.pdb
+C:\Users\Le0\Documents\Visual Studio 2012\Projects\Accessor Generator\Accessor Generator\obj\Debug\Accessor Generator.csprojResolveAssemblyReference.cache
+C:\Users\Le0\Documents\Visual Studio 2012\Projects\Accessor Generator\Accessor Generator\obj\Debug\Accessor_Generator.Properties.Resources.resources
+C:\Users\Le0\Documents\Visual Studio 2012\Projects\Accessor Generator\Accessor Generator\obj\Debug\Accessor Generator.csproj.GenerateResource.Cache
+C:\Users\Le0\Documents\Visual Studio 2012\Projects\Accessor Generator\Accessor Generator\obj\Debug\Accessor Generator.dll
+C:\Users\Le0\Documents\Visual Studio 2012\Projects\Accessor Generator\Accessor Generator\obj\Debug\Accessor Generator.pdb
+D:\Develop\Accessor-Generator\Accessor Generator\bin\Debug\Accessor Generator.dll
+D:\Develop\Accessor-Generator\Accessor Generator\bin\Debug\Accessor Generator.pdb
+D:\Develop\Accessor-Generator\Accessor Generator\obj\Debug\Accessor Generator.csprojResolveAssemblyReference.cache
+D:\Develop\Accessor-Generator\Accessor Generator\obj\Debug\Accessor_Generator.Properties.Resources.resources
+D:\Develop\Accessor-Generator\Accessor Generator\obj\Debug\Accessor Generator.csproj.GenerateResource.Cache
+D:\Develop\Accessor-Generator\Accessor Generator\obj\Debug\Accessor Generator.dll
+D:\Develop\Accessor-Generator\Accessor Generator\obj\Debug\Accessor Generator.pdb
+D:\Develop\White_plus\Accessor Generator\bin\Debug\Accessor Generator.dll
+D:\Develop\White_plus\Accessor Generator\bin\Debug\Accessor Generator.pdb
+D:\Develop\White_plus\Accessor Generator\bin\Debug\TestStack.White.dll
+D:\Develop\White_plus\Accessor Generator\bin\Debug\Castle.Core.dll
+D:\Develop\White_plus\Accessor Generator\bin\Debug\TestStack.White.pdb
+D:\Develop\White_plus\Accessor Generator\bin\Debug\Castle.Core.xml
+D:\Develop\White_plus\Accessor Generator\obj\Debug\Accessor_Generator.Properties.Resources.resources
+D:\Develop\White_plus\Accessor Generator\obj\Debug\Accessor Generator.csproj.GenerateResource.Cache
+D:\Develop\White_plus\Accessor Generator\obj\Debug\Accessor Generator.dll
+D:\Develop\White_plus\Accessor Generator\obj\Debug\Accessor Generator.pdb

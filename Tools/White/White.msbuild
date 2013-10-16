@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build;Publish" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Root>$(MSBuildProjectDirectory)\</Root>
+    <Platform Condition="$(Platform) == ''">x86</Platform>
+    <Configuration Condition="$(Configuration) == ''">Release</Configuration>
+    <MSBuildCommunityTasksPath>$(Root)tools\MSBuildCommunityTasks</MSBuildCommunityTasksPath>
+  </PropertyGroup>
+
+  <Target Name="Cleanup">
+    <Error Condition="$(Root) == ''" Text="Root variable must be defined" />
+
+    <!-- Diagnostics -->
+    <Message Text="Diagnostics:"/>
+    <Message Text="Project root:    $(Root)" />
+    <Message Text="Drop path:       build\Artifacts" />
+
+    <!-- Clean up -->
+    <ItemGroup>
+      <FilesToDelete Include="$(Root)**\bin\**\*.*" />
+      <FilesToDelete Include="$(Root)**\obj\**\*.*" />
+      <FilesToDelete Include="$(Root)build\Artifacts\**\*.*" />
+    </ItemGroup>
+    <Delete Files="@(FilesToDelete)" ContinueOnError="true" />
+    <Delete Files="$(Root)build\Artifacts" />
+  </Target>
+  
+  <Target Name="Build" DependsOnTargets="Cleanup">
+    <MSBuild Projects="$(Root)src\TestStack.White.sln" Properties="Configuration=$(Configuration);Platform=$(Platform)" />
+  </Target>
+
+  <Target Name="Test" DependsOnTargets="Build">
+    <Exec Command="$(Root)tools\nunit\nunit-console-x86.exe $(Root)src\TestStack.White.UnitTests\bin\$(Configuration)\White.Core.UnitTests.dll /noshadow /apartment=STA" />
+  </Target>
+  
+  <Target Name="UITests" DependsOnTargets="Build">
+    <Exec Command="$(Root)tools\nunit\nunit-console-x86.exe $(Root)src\TestStack.White.UITests.Old\bin\$(Configuration)\White.Core.UITests.dll /noshadow /apartment=STA /include=WinForm" />
+    <Exec Command="$(Root)tools\nunit\nunit-console-x86.exe $(Root)src\TestStack.White.UITests.Old\bin\$(Configuration)\White.Core.UITests.dll /noshadow /apartment=STA /include=WPF" />
+    <Exec Command="$(Root)tools\nunit\nunit-console-x86.exe $(Root)src\TestStack.White.UITests.Old\bin\$(Configuration)\White.Core.UITests.dll /noshadow /apartment=STA /include=SWT" />
+  </Target>
+
+  <Target Name="Publish">
+    <PropertyGroup>
+      <Version Condition="'$(Version)' == ''">0.0.0.0</Version>
+    </PropertyGroup>
+    <MakeDir Directories="$(Root)build\Artifacts" />
+    <Exec Command="$(Root)src\.nuget\nuget.exe pack $(Root)src\TestStack.White\TestStack.White.nuspec -Version $(Version) -OutputDir $(Root)build\Artifacts -BasePath $(Root)src\TestStack.White\bin\$(Configuration)" />
+  </Target>
+</Project>

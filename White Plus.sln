@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Accessor Generator", "Accessor Generator\Accessor Generator.csproj", "{DE62DCD2-C33B-4AA2-899A-A1CECC695A34}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UTests for AGenerator", "UTests for AGenerator\UTests for AGenerator.csproj", "{38BDE4D5-F40B-4E5B-BBDC-758499B6BC1D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DE62DCD2-C33B-4AA2-899A-A1CECC695A34}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE62DCD2-C33B-4AA2-899A-A1CECC695A34}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE62DCD2-C33B-4AA2-899A-A1CECC695A34}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE62DCD2-C33B-4AA2-899A-A1CECC695A34}.Release|Any CPU.Build.0 = Release|Any CPU
+		{38BDE4D5-F40B-4E5B-BBDC-758499B6BC1D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38BDE4D5-F40B-4E5B-BBDC-758499B6BC1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38BDE4D5-F40B-4E5B-BBDC-758499B6BC1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38BDE4D5-F40B-4E5B-BBDC-758499B6BC1D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
