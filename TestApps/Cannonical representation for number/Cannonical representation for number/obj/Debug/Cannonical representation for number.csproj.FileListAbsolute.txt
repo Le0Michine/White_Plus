@@ -1,0 +1,13 @@
+D:\Develop\White_plus\Cannonical representation for number\Cannonical representation for number\bin\Debug\Cannonical representation of number.exe.config
+D:\Develop\White_plus\Cannonical representation for number\Cannonical representation for number\obj\Debug\Cannonical representation of number.exe
+D:\Develop\White_plus\Cannonical representation for number\Cannonical representation for number\obj\Debug\Cannonical representation of number.pdb
+D:\Develop\White_plus\Cannonical representation for number\Cannonical representation for number\bin\Debug\Cannonical representation of number.exe
+D:\Develop\White_plus\Cannonical representation for number\Cannonical representation for number\bin\Debug\Cannonical representation of number.pdb
+D:\Develop\White_plus\Cannonical representation for number\Cannonical representation for number\obj\Debug\Cannonical representation for number.csprojResolveAssemblyReference.cache
+D:\Develop\White_plus\Cannonical representation for number\Cannonical representation for number\obj\Debug\MainWindow.baml
+D:\Develop\White_plus\Cannonical representation for number\Cannonical representation for number\obj\Debug\MainWindow.g.cs
+D:\Develop\White_plus\Cannonical representation for number\Cannonical representation for number\obj\Debug\App.g.cs
+D:\Develop\White_plus\Cannonical representation for number\Cannonical representation for number\obj\Debug\Cannonical representation of number_MarkupCompile.cache
+D:\Develop\White_plus\Cannonical representation for number\Cannonical representation for number\obj\Debug\Cannonical representation of number.g.resources
+D:\Develop\White_plus\Cannonical representation for number\Cannonical representation for number\obj\Debug\Cannonical_representation_of_number.Properties.Resources.resources
+D:\Develop\White_plus\Cannonical representation for number\Cannonical representation for number\obj\Debug\Cannonical representation for number.csproj.GenerateResource.Cache
