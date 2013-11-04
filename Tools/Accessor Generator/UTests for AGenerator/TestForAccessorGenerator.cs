@@ -1,5 +1,6 @@
 ﻿using Accessor_Generator;
-using NUnit.Framework;
+//using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -9,8 +10,8 @@ using System.Xml;
 
 namespace UTests_for_AGenerator
 {
-    [TestFixture]
-    internal class TestForAccessorGenerator
+    [TestClass]
+    public class TestForAccessorGenerator
     {
         #region private fields
 
@@ -66,9 +67,9 @@ namespace UTests_for_AGenerator
 
         #endregion
 
-        #region public methods
+        #region tests
 
-        [Test]
+        [TestMethod]
         public void TestNameOfFiles()
         {
             foreach (var outputFile in _outputFiles)
@@ -77,7 +78,7 @@ namespace UTests_for_AGenerator
             }
         }
 
-        [Test]
+        [TestMethod]
         public void TestCountOfOutputFiles()
         {
             int countOfXamlFiles = (new DirectoryInfo(OutputDirectory).GetFiles("*.xaml")).Count();
@@ -85,7 +86,7 @@ namespace UTests_for_AGenerator
             Assert.IsTrue(countOfCsAccessorFiles == countOfXamlFiles);
         }
 
-        [Test]
+        [TestMethod]
         public void TestContentOfAccessorFiles()
         {
             foreach (var outputFile in _outputFiles)
@@ -114,14 +115,14 @@ namespace UTests_for_AGenerator
             }
         }
 
-        [SetUp]
+        [TestInitialize]
         public void SettingUp()
         {
             InitializeAccessorGenerator();
             InitializeOutputFileName();
         }
 
-        [TearDown]
+        [TestCleanup]
         public void TearDown()
         {
             
