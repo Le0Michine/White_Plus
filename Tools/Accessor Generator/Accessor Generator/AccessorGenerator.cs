@@ -46,37 +46,47 @@ namespace Accessor_Generator
 					{"ToolTip", "ToolTip"}
 				}; 
 		private String _xamlNameSpace;
+        private string _outputDirectory;
+        private IEnumerable<string> _xmlFiles;
 
-		public AccessorGenerator(IEnumerable<String> xmlFiles, String outputDirectory)
+
+		public AccessorGenerator(IEnumerable<string> xmlFiles, string outputDirectory)
 		{
-			foreach (String file in xmlFiles)
-			{
-				var reader = new XmlTextReader(file);
-				var accessorClass = new CodeCompileUnit(); ;
-
-				reader.Read();
-				GetXamlNameSpace(reader);
-				String className = reader.GetAttribute(_xamlNameSpace + "Class").Split('.')[1];
-
-				var nameSpace = new CodeNamespace(@"TestFramework");
-				var imports = new CodeNamespace();
-				imports.Imports.Add(new CodeNamespaceImport("System"));
-				imports.Imports.Add(new CodeNamespaceImport("White.Core"));
-				imports.Imports.Add(new CodeNamespaceImport("White.Core.UIItems.WindowItems"));
-				
-				accessorClass.Namespaces.Add(imports);
-				accessorClass.Namespaces.Add(nameSpace);
-
-				var accessorClassDeclaration = new CodeTypeDeclaration(className + "Accessor");
-				accessorClassDeclaration.BaseTypes.Add("AccessorBase");
-				ParseXaml(reader, imports, accessorClassDeclaration);
-				nameSpace.Types.Add(accessorClassDeclaration);
-				String sourceFile = GenerateSourceFile(outputDirectory + className + "Accessor", accessorClass);
-				Console.Out.WriteLine(sourceFile);
-			}
+		    _outputDirectory = outputDirectory;
+		    _xmlFiles = xmlFiles;
 		}
-        
-		private void GetXamlNameSpace(XmlTextReader reader)
+
+        public void Generate()
+        {
+            foreach (String file in _xmlFiles)
+            {
+                var reader = new XmlTextReader(file);
+                var accessorClass = new CodeCompileUnit();
+                
+                reader.Read();
+                GetXamlNameSpace(reader);
+                String className = reader.GetAttribute(_xamlNameSpace + "Class").Split('.')[1];
+
+                var nameSpace = new CodeNamespace(@"ViewAccessors");
+                var imports = new CodeNamespace();
+                imports.Imports.Add(new CodeNamespaceImport("System"));
+                //imports.Imports.Add(new CodeNamespaceImport("White.Core"));
+                imports.Imports.Add(new CodeNamespaceImport("White.Core.UIItems"));
+                //imports.Imports.Add(new CodeNamespaceImport("White.Core.UIItems.WindowItems"));
+
+                accessorClass.Namespaces.Add(imports);
+                accessorClass.Namespaces.Add(nameSpace);
+
+                var accessorClassDeclaration = new CodeTypeDeclaration(className + "Accessor");
+                accessorClassDeclaration.BaseTypes.Add("AccessorBase");
+                ParseXaml(reader, imports, accessorClassDeclaration);
+                nameSpace.Types.Add(accessorClassDeclaration);
+                String sourceFile = GenerateSourceFile(_outputDirectory + className + "Accessor", accessorClass);
+                Console.Out.WriteLine(sourceFile);
+            }
+        }
+
+        private void GetXamlNameSpace(XmlTextReader reader)
 		{
 			while (reader.MoveToNextAttribute())
 			{
@@ -145,7 +155,7 @@ namespace Accessor_Generator
 
 		private void AddUIItem(CodeNamespace imports, String UIItemType)
 		{
-			imports.Imports.Add(new CodeNamespaceImport("White.Core.UIItems." + UIItemType));
+			//imports.Imports.Add(new CodeNamespaceImport("White.Core.UIItems." + UIItemType));
 		}
 
 
