@@ -1,5 +1,4 @@
 ﻿using Accessor_Generator;
-//using NUnit.Framework;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
@@ -62,7 +61,7 @@ namespace UTests_for_AGenerator
 
         private void InitializeAccessorGenerator()
         {
-            new AccessorGenerator(_inputFiles, OutputDirectory);
+            new AccessorGenerator(_inputFiles, OutputDirectory).Generate();
         }
 
         #endregion
