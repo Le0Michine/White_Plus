@@ -63,6 +63,7 @@
     <Folder Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Accessors\MainWindowAccessor.cs" />
     <Compile Include="AccessorBase.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -72,9 +73,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <GenerateAccessor Include="..\..\Tools\Accessor Generator\UTests for AGenerator\bin\Release\Tests\MainWindow.xaml">
-      <Link>MainWindow.xaml</Link>
-      <Generator>MSBuild:Compile</Generator>
+    <GenerateAccessor Include="..\..\TestApps\Cannonical representation for number\Cannonical representation for number\MainWindow.xaml">
+      <Link>Accessors\MainWindow.xaml</Link>
       <SubType>Designer</SubType>
     </GenerateAccessor>
   </ItemGroup>
