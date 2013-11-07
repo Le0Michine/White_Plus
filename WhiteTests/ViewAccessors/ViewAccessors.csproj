@@ -63,7 +63,7 @@
     <Folder Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ViewAccessorBase.cs" />
+    <Compile Include="AccessorBase.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Tools\White\src\TestStack.White\TestStack.White.csproj">
@@ -71,7 +71,18 @@
       <Name>TestStack.White</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <GenerateAccessor Include="..\..\Tools\Accessor Generator\UTests for AGenerator\bin\Release\Tests\MainWindow.xaml">
+      <Link>MainWindow.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </GenerateAccessor>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="generateAccessorAction.targets" />
+  <PropertyGroup>
+    <AccessorGeneratorPath>..\..\Tools\Accessor Generator Utility</AccessorGeneratorPath>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
