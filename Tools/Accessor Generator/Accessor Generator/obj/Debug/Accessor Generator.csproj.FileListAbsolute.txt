@@ -33,3 +33,9 @@ D:\Develop\White_plus\Tools\Accessor Generator\Accessor Generator\obj\Debug\Acce
 D:\Develop\White_plus\Tools\Accessor Generator\Accessor Generator\obj\Debug\Accessor Generator.csproj.GenerateResource.Cache
 D:\Develop\White_plus\Tools\Accessor Generator\Accessor Generator\obj\Debug\Accessor Generator.dll
 D:\Develop\White_plus\Tools\Accessor Generator\Accessor Generator\obj\Debug\Accessor Generator.pdb
+D:\учеба\White+\Tools\Accessor Generator\Accessor Generator\bin\Debug\Accessor Generator.dll
+D:\учеба\White+\Tools\Accessor Generator\Accessor Generator\bin\Debug\Accessor Generator.pdb
+D:\учеба\White+\Tools\Accessor Generator\Accessor Generator\obj\Debug\Accessor_Generator.Properties.Resources.resources
+D:\учеба\White+\Tools\Accessor Generator\Accessor Generator\obj\Debug\Accessor Generator.csproj.GenerateResource.Cache
+D:\учеба\White+\Tools\Accessor Generator\Accessor Generator\obj\Debug\Accessor Generator.dll
+D:\учеба\White+\Tools\Accessor Generator\Accessor Generator\obj\Debug\Accessor Generator.pdb
