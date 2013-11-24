@@ -12,11 +12,12 @@ namespace Cannonical_representation_of_number
 	/// </summary>
 	public partial class MainWindow : Window
 	{
-		public MainWindow()
-		{
-			InitializeComponent();
-		}
-
+        
+        public MainWindow()
+        {
+            InitializeComponent();
+        }
+    
         private void Button_Close_Click(object sender, RoutedEventArgs e)
         {
             Close();
@@ -28,28 +29,28 @@ namespace Cannonical_representation_of_number
             if (number != null) number.Text = "enter number";
         }
 
-        private void SecondTexBox_Initialized(object sender, EventArgs e)
+        //private void SecondTexBox_Initialized(object sender, EventArgs e)
+        //{
+        //    var number = sender as TextBox;
+        //    if (number != null) number.Text = "enter number";
+        //}
+
+        private void Number_GotFocus(object sender, RoutedEventArgs e)
         {
-            var number = sender as TextBox;
-            if (number != null) number.Text = "enter number";
+            var number = e.Source as TextBox;
+            if (number != null) number.Clear();
         }
 
-	    private void Number_GotFocus(object sender, RoutedEventArgs e)
-	    {
-	        var number = e.Source as TextBox;
-	        if (number != null) number.Clear();
-	    }
+        //private void SecondTexBox_GotFocus(object sender, RoutedEventArgs e)
+        //{
+        //    var number = e.Source as TextBox;
+        //    if (number != null) number.Clear();
+        //}
 
-         private void SecondTexBox_GotFocus(object sender, RoutedEventArgs e)
-	    {
-	        var number = e.Source as TextBox;
-	        if (number != null) number.Clear();
-	    }
-        
-	    private String Represetation(int n)
+        private String Represetation(int n)
         {
-            var ans = String.Format("Representation for " + n +  " includes: \n");
-            var devisor = new List<int>();     
+            var ans = String.Format("Representation for " + n + " includes: \n");
+            var devisor = new List<int>();
             for (int i = 2; i < n / 2 + 1; i++)
             {
                 if (isDevided(n, i))
@@ -57,8 +58,8 @@ namespace Cannonical_representation_of_number
                     devisor.Add(i);
                 }
             }
-            
-            for (int i = 1; i < devisor.Count; i++) 
+
+            for (int i = 1; i < devisor.Count; i++)
             {
                 for (int j = 0; j < i; j++)
                 {
@@ -80,7 +81,7 @@ namespace Cannonical_representation_of_number
         {
             return (n % d == 0);
         }
-
+    
         //private string PhiFunc(int numb)
         //{
         //    double result = 1;
@@ -168,7 +169,7 @@ namespace Cannonical_representation_of_number
                 if (t != null) t.Clear();
             }
         }
-            
+    
         //private void _number2_KeyUp(object sender, KeyEventArgs e)
         //{
         //    if (e.Key == Key.Return)
@@ -210,6 +211,6 @@ namespace Cannonical_representation_of_number
         //        AnsForComboBox.Text = "Field is empty";
         //    }
         //}
+    }
 
-	}
 }
