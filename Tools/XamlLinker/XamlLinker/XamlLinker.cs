@@ -18,10 +18,10 @@ namespace XamlLinker
 
         #endregion
 
-        #region private properties
+        #region private fields
 
         private List<string> XamlFiles;
- 
+        private string accessorGeneratorBildAction = "GenerateAccessor";
         #endregion
 
         #region private methods
@@ -46,6 +46,29 @@ namespace XamlLinker
                 XamlFiles.AddRange(Directory.GetFiles(innerDirectory, "*.xaml"));
             }
         }
+
+        private XmlElement CreateLinkToXamlFile(string path, XmlDocument projectDocument)
+        {
+            XmlElement buildActionElement = projectDocument.CreateElement(accessorGeneratorBildAction);
+            XmlAttribute includeAttribute = projectDocument.CreateAttribute("Include");
+            includeAttribute.Value = path;
+            buildActionElement.Attributes.Append(includeAttribute);
+            XmlElement linkElement = projectDocument.CreateElement("Link");
+            XmlText linkPath = projectDocument.CreateTextNode(OutputDir);
+            linkElement.AppendChild(linkPath);
+            buildActionElement.AppendChild(linkElement);
+            return buildActionElement;
+        }
+
+        private void LinkXamlToProjectDocument(XmlDocument projectDocument)
+        {
+            XmlElement itemGroupElement = projectDocument.CreateElement("ItemGroup");
+            foreach (string file in XamlFiles)
+            {
+                itemGroupElement.AppendChild(CreateLinkToXamlFile(file, projectDocument));
+            }
+            projectDocument.DocumentElement.AppendChild(itemGroupElement);
+        }
         #endregion
 
         #region public methods
@@ -61,21 +84,10 @@ namespace XamlLinker
         public void Link()
         {
             FindAllXamlFiles();
-            XmlTextReader reader = new XmlTextReader(ProjectFile);
             XmlDocument document = new XmlDocument();
             document.Load(ProjectFile);
-            XmlElement node = document.CreateElement("ItemGroup");
-            XmlElement createAccessor = document.CreateElement("GenerateAccessor");
-            XmlAttribute attribute = document.CreateAttribute("Include");
-            attribute.Value = XamlFiles[0];
-            createAccessor.Attributes.Append(attribute);
-            XmlElement linkNode = document.CreateElement("Link");
-            XmlText link = document.CreateTextNode(OutputDir);
-            linkNode.AppendChild(link);
-            createAccessor.AppendChild(linkNode);
-            node.AppendChild(createAccessor);
-            document.DocumentElement.AppendChild(node);
-            document.Save(ProjectFile);
+            LinkXamlToProjectDocument(document);
+            document.Save(ProjectFile);          
         }
 
         #endregion
