@@ -1,0 +1,23 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <AvailableItemName Include="GenerateAccessor" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <AccessorGeneratorPath Condition="'$(AccessorGeneratorPath)' == ''">.</AccessorGeneratorPath>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <InputFiles>@(GenerateAccessor)</InputFiles>
+    <OutputDirectory>.\Accessors\</OutputDirectory>
+  </PropertyGroup>
+  
+  <UsingTask TaskName="GenerationUtility" AssemblyFile="$(AccessorGeneratorPath)\bin\Accessor Generator.dll"/>
+
+
+  <Target Name="ViewAccessor" Inputs="@(GenerateAccessor)" Outputs="@(GenerateAccessor -> '%(filename).cs')">
+    <GenerationUtility InputFiles = "$(InputFiles)" OutputFiles = "$(OutputDirectory)"/>
+  </Target>
+  
+  <Target Name="BeforeCompile" DependsOnTargets="ViewAccessor"/>
+</Project>

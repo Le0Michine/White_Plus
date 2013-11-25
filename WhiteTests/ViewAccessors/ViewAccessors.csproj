@@ -52,9 +52,6 @@
     <Reference Include="System.Xaml">
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
     </Reference>
-    <Reference Include="TestStack.White">
-      <HintPath>..\..\Tools\White\src\TestStack.White\bin\Debug\TestStack.White.dll</HintPath>
-    </Reference>
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
@@ -66,12 +63,21 @@
     <Folder Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< .mine
     <Compile Include="..\..\TestApps\Cannonical representation for number\Cannonical representation for number\MainWindow.xaml.cs">
       <Link>MainWindow.xaml.cs</Link>
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="AccessorBase.cs" />
+=======
+    <Compile Include="Accessors\MainWindowAccessor.cs" />
+    <Compile Include="AccessorBase.cs" />
+
+
+
+>>>>>>> .theirs
   </ItemGroup>
+<<<<<<< .mine
   <ItemGroup>
     <Page Include="..\..\TestApps\Cannonical representation for number\Cannonical representation for number\MainWindow.xaml">
       <Link>MainWindow.xaml</Link>
@@ -82,7 +88,27 @@
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
+
+
+=======
+  <ItemGroup>
+    <ProjectReference Include="..\..\Tools\White\src\TestStack.White\TestStack.White.csproj">
+      <Project>{12c59ce2-9cf7-44f4-b27c-90754609f979}</Project>
+      <Name>TestStack.White</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <GenerateAccessor Include="..\..\TestApps\Cannonical representation for number\Cannonical representation for number\MainWindow.xaml">
+      <Link>Accessors\MainWindow.xaml</Link>
+      <SubType>Designer</SubType>
+    </GenerateAccessor>
+  </ItemGroup>
+>>>>>>> .theirs
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="generateAccessorAction.targets" />
+  <PropertyGroup>
+    <AccessorGeneratorPath>..\..\Tools\Accessor Generator Utility</AccessorGeneratorPath>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

@@ -9,13 +9,10 @@
 //------------------------------------------------------------------------------
 
 using System;
-using White.Core;
-using White.Core.UIItems.ListBoxItems;
-using White.Core.UIItems.ListView;
-using White.Core.UIItems.WindowItems;
+using White.Core.UIItems;
 
 
-namespace TestFramework {
+namespace ViewAccessors {
     
     
     public class ComboBoxAndDataGridAccessor : AccessorBase {

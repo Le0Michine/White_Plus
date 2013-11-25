@@ -1,0 +1,22 @@
+﻿<Window x:Name="DecompositionOfNumber" x:Class="Cannonical_representation_of_number.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:my="PhiFunction.PhiFunction"
+        Title="Decomposition of Number" Height="325" Width="260" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Grid.IsSharedSizeScope="True" MinWidth="265" MinHeight="320">
+    <TabControl HorizontalAlignment="Left" Height="295" VerticalAlignment="Top" Width="257">
+        <TabItem Header="Decomp">
+            <Grid Background="#FFFFFF" Margin="0,-4,1,4">
+                <Grid Margin="-8,0,0,0" RenderTransformOrigin="0.5,0.5">
+                    <Button x:Name="CloseButton" Content="Close" Height="25" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="70" Margin="0,0,10,7" Click="Button_Close_Click"/>
+                    <TextBox x:Name="Number" HorizontalAlignment="Left" Height="23" Margin="14,10,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="230" Initialized="Number_Initialized" GotFocus="Number_GotFocus" KeyUp="_number_KeyUp" RenderTransformOrigin="0.496,0.478"/>
+                    <TextBlock x:Name="Answer" HorizontalAlignment="Left" Margin="14,38,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="179" Width="230"/>
+                    <Button x:Name="DecomposeButton" Content="Decompose" HorizontalAlignment="Left" Margin="10,0,0,7" VerticalAlignment="Bottom" Width="155" Height="25" Click="Button_Representation_Click"/>
+                </Grid>
+            </Grid>
+        </TabItem>
+        <TabItem Header="Other funcs">
+            <Grid Resources="{StaticResource ResourceKey=PhiFunc}" Background="#FFFFFF">
+            </Grid>
+        </TabItem>
+    </TabControl>
+</Window>
