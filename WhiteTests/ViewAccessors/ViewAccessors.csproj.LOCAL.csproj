@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{28BDE4D5-F40B-4E5B-BBDC-758499B6BC1D}</ProjectGuid>
+    <ProjectGuid>{F48BFCA4-3016-4B9B-801E-2CF07BF6F5A6}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ViewAccessors</RootNamespace>
@@ -70,7 +70,7 @@
       <Link>MainWindow.xaml.cs</Link>
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="AccessorBase.cs" />
+    <XamlAppDef Include="AccessorBase.cs" />
   </ItemGroup>
   <ItemGroup>
     <Page Include="..\..\TestApps\Cannonical representation for number\Cannonical representation for number\MainWindow.xaml">

@@ -9,7 +9,7 @@ namespace MathService
 {
     class Test
     {
-        private static void CalculationPhiFunc(Window window, string number)
+        private static string CalculationPhiFunc(Window window, string number)
         {
             var textBox = window.Get<White.Core.UIItems.TextBox>();
             textBox.Text = number;
@@ -17,7 +17,7 @@ namespace MathService
             decompButton.Click();
             var resultLabel = window.Get<White.Core.UIItems.Label>();
             string result = resultLabel.Text;
-
+            return result;
         }
     }
 }
