@@ -4,7 +4,6 @@ using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
-using Cannonical_representation_of_number;
 
 namespace Cannonical_representation_of_number
 {

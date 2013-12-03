@@ -60,10 +60,6 @@
       <Project>{12c59ce2-9cf7-44f4-b27c-90754609f979}</Project>
       <Name>TestStack.White</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Tests\Tests.csproj">
-      <Project>{38bde4d5-f40b-4e5b-bbdc-758499b6bc1d}</Project>
-      <Name>Tests</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MathService.cs" />

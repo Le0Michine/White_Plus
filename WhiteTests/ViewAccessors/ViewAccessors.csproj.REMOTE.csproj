@@ -64,7 +64,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Accessors\MainWindowAccessor.cs" />
-    <Compile Include="AccessorBase.cs" />
+    <Compile Include="ViewAccessorBase.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Tools\White\src\TestStack.White\TestStack.White.csproj">
