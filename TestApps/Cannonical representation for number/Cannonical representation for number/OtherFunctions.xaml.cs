@@ -10,21 +10,15 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace Cannonical_representation_of_number
 {
     /// <summary>
-    /// Логика взаимодействия для PhiFuncion.xaml
+    /// Логика взаимодействия для OtherFunctions.xaml
     /// </summary>
-    public partial class PhiFuncion : Page
+    public partial class OtherFunctions : Window
     {
-        //public PhiFuncion()
-        //{
-        //    InitializeComponent();
-        //}
-
         private void SecondTexBox_Initialized(object sender, EventArgs e)
         {
             var number = sender as TextBox;
@@ -101,34 +95,34 @@ namespace Cannonical_representation_of_number
 
         private void Button_Conculation_Click(object sender, RoutedEventArgs e)
         {
-            //AnsForComboBox.Text = "";
-            //var str = SecondTextBox.Text;
-            //if (!String.IsNullOrEmpty(str))
-            //{
-            //    try
-            //    {
-            //        int numb = int.Parse(str);
-            //        if (comboBox.SelectedItem == PhiFuncion)
-            //            AnsForComboBox.Text = PhiFunc(numb);
-            //        else
-            //            if (comboBox.SelectedItem == PrimeF)
-            //                AnsForComboBox.Text = PrimeFunc(numb);
-            //            else
-            //                AnsForComboBox.Text = "Choose function!";
-            //    }
-            //    catch (FormatException)
-            //    {
-            //        AnsForComboBox.Text = "Incorrect input";
-            //    }
-            //    catch (OverflowException)
-            //    {
-            //        AnsForComboBox.Text = "The number is too large";
-            //    }
-            //}
-            //else
-            //{
-            //    AnsForComboBox.Text = "Field is empty";
-            //}
+            AnsForComboBox.Text = "";
+            var str = SecondTextBox.Text;
+            if (!String.IsNullOrEmpty(str))
+            {
+                try
+                {
+                    int numb = int.Parse(str);
+                    if (comboBox.SelectedItem == PhiFuncion)
+                        AnsForComboBox.Text = PhiFunc(numb);
+                    else
+                        if (comboBox.SelectedItem == PrimeF)
+                            AnsForComboBox.Text = PrimeFunc(numb);
+                        else
+                            AnsForComboBox.Text = "Choose function!";
+                }
+                catch (FormatException)
+                {
+                    AnsForComboBox.Text = "Incorrect input";
+                }
+                catch (OverflowException)
+                {
+                    AnsForComboBox.Text = "The number is too large";
+                }
+            }
+            else
+            {
+                AnsForComboBox.Text = "Field is empty";
+            }
         }
     }
 }

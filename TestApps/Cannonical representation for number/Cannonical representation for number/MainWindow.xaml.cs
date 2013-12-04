@@ -109,5 +109,12 @@ namespace Cannonical_representation_of_number
                 if (t != null) t.Clear();
             }
         }
+
+        private void Button_More_Functions(object sender, RoutedEventArgs e)
+        {
+            OtherFunctions appWindow = new OtherFunctions();
+            appWindow.InitializeComponent();
+            appWindow.Show();
+        }
     }
 }

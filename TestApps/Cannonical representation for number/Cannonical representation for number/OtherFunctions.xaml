@@ -1,0 +1,23 @@
+﻿<Window x:Class="Cannonical_representation_of_number.OtherFunctions"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="OtherFunctions" Height="324.329" Width="263.462">
+    <Grid RenderTransformOrigin="0.5,0.5" Margin="0,10,2,4">
+        <ComboBox HorizontalAlignment="Left" VerticalAlignment="Top" Width="227" Height="23" Name="comboBox" Margin="10,43,0,0">
+            <ComboBoxItem Content="Phi function" HorizontalAlignment="Left" Width="225" Name="PhiFuncion"/>
+            <ComboBoxItem Content="Is number prime?" HorizontalAlignment="Left" Width="225" Name="PrimeF"/>
+        </ComboBox>
+        <TextBox Name="SecondTextBox" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="227" Initialized="SecondTexBox_Initialized" GotFocus="SecondTexBox_GotFocus" KeyUp="_number2_KeyUp"/>
+        <TextBlock Name="AnsForComboBox" HorizontalAlignment="Left" Margin="10,71,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="160" Width="227"/>
+        <Button Content="Do the calculation" HorizontalAlignment="Left" Margin="9,243,0,0" VerticalAlignment="Top" Width="111" Height="25" Click="Button_Conculation_Click" RenderTransformOrigin="0.5,0.5">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleY="-1" ScaleX="-1"/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="179.941"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+    </Grid>
+</Window>
