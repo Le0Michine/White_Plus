@@ -7,7 +7,7 @@ using White.Core.UIItems.WindowItems;
 
 namespace ViewAccessors
 {
-    public class AccessorBase
+    public class AccessorBaseапваивпратпрт
     {
         protected Window window;
     }
