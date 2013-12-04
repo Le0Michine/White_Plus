@@ -1,28 +1,26 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using White.Core;
-using System.Windows.Controls;
-using White.Core.Factory;
 using White.Core.UIItems.WindowItems;
-using White.Core.UIItems.Finders;
 
 namespace ViewAccessors
 {
-    public class AccessorBase
+    public class DialogAccessor
     {
         string ExeSourceFile = @"D:\study\White+\TestApps\Cannonical representation for number\Cannonical representation for number\bin\Debug\Cannonical representation for number.exe";
         public Application application;
         public Window window;
-        
-        /// <summary>
-        /// to do: window 
-        /// </summary>
-        public AccessorBase() 
+
+        public DialogAccessor()
         {
             application = Application.Launch(ExeSourceFile);
-            window = application.GetWindow("Decomposition");
+            var initWindow = application.GetWindow("Decomposition");
+            var moreFuncButton = initWindow.Get<White.Core.UIItems.Button>("MoreFunctions");
+            moreFuncButton.Click();
+            window = application.GetWindow("OtherFunctions");
         }
 
     }
-
 }

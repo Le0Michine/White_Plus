@@ -2,29 +2,38 @@
 using White.Core.UIItems.WindowItems;
 using ViewAccessors;
 using MathService;
+using ViewAccessors;
 
 namespace MathServiceTest
 {
     [TestClass]
     public class MathServiceTest
     {
-        Window window;
-        AccessorBase accessor;
         Test test;
+        AccessorBase accessor;
+        DialogAccessor dialogAccessor;
         [TestInitialize]
         public void Initialize()
         {
-            accessor = new AccessorBase();
-            window = accessor.window;
             test = new Test();
         }
 
         [TestMethod]
-        public void IdenticTest()
+        public void DecompositionTest()
         {
-            string resultString = "Representation for 6 includes: \n2\n3\n";
-            string resString = test.CalculationPhiFunc(window, "6");
-            Assert.AreEqual(resString, resultString);
+            accessor = new AccessorBase();
+            string answer = "Representation for 6 includes: \n2\n3\n";
+            string result = test.CalculationDecomposition(accessor, "6");
+            Assert.AreEqual(result, answer);
+        }
+
+        [TestMethod]
+        public void PhiFunctionTest()
+        {
+            dialogAccessor = new DialogAccessor();
+            string answer = "Phi funcion for 6:\n1";
+            string result = test.CalculationPhiFunction(dialogAccessor, "6");
+            Assert.AreEqual(result, answer);
         }
     }
 }
