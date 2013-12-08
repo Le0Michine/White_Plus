@@ -60,6 +60,17 @@
       <Project>{12c59ce2-9cf7-44f4-b27c-90754609f979}</Project>
       <Name>TestStack.White</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ViewAccessors\ViewAccessors.csproj">
+      <Project>{28bde4d5-f40b-4e5b-bbdc-758499b6bc1d}</Project>
+      <Name>ViewAccessors</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Context.cs" />
+    <Compile Include="MathService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="AppSource.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
