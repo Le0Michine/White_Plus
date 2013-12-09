@@ -34,7 +34,6 @@ namespace Cannonical_representation_of_number
             if (number != null) number.Clear();
         }
 
-
         private String Represetation(int n)
         {
             var ans = String.Format("Representation for " + n + " includes: \n");

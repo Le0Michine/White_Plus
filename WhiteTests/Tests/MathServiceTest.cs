@@ -21,12 +21,12 @@ namespace MathServiceTest
         {
             test = new Test();
             context = new Context();
+            accessor = new AccessorBase(context.getWindow());
         }
 
         [TestMethod]
         public void DecompositionTest()
-        {
-            accessor = new AccessorBase(context.getWindow());
+        { 
             string answer = "Representation for 6 includes: \n2\n3\n";
             string result = test.CalculationDecomposition(accessor, "6");
             Assert.AreEqual(result, answer);

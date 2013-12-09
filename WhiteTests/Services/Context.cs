@@ -6,11 +6,12 @@ namespace Services
 {
     public class Context
     {
+        public Application application;
         public Window getWindow()
         {
-            StreamReader reader = File.OpenText("AppSource.txt");
-            string ExeSourceFile = reader.ReadLine();
-            var application = Application.Launch(ExeSourceFile);
+            StreamReader reader = File.OpenText(@"D:\WhitePlus\WhiteTests\Services\AppSource.txt");
+            string ExeSourceFile = reader.ReadToEnd();
+            application = Application.Launch(ExeSourceFile);
             var window = application.GetWindow("Decomposition");
             return window;
         }

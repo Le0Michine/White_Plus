@@ -25,11 +25,7 @@ namespace MathService
 
         public string CalculationPhiFunction(DialogAccessor accessor, string number)
         {
-            //var firstWindow = accessor.window;
-            //var moreFuncButton = firstWindow.Get<White.Core.UIItems.Button>("MoreFunctions");
-            //moreFuncButton.Click();
-            //var window = accessor.application.GetWindow("OtherFunctions");
-            var window = accessor.window;
+            var window = accessor.dialogWindow;
             var comboBox = window.Get<White.Core.UIItems.ListBoxItems.ComboBox>();
             comboBox.Select("Phi function");
             var textBox = window.Get<White.Core.UIItems.TextBox>();
@@ -38,8 +34,8 @@ namespace MathService
             calculateButton.Click();
             var resultLabel = window.Get<White.Core.UIItems.Label>("AnsForComboBox");
             string result = resultLabel.Text;
-            window.Close();
-            //firstWindow.Close();
+            //accessor.dialogWindow.Close();
+            //accessor.window.Close();
             return result;
         }
     }
