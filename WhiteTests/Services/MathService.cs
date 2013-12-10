@@ -6,25 +6,32 @@ using White.Core.UIItems;
 using White.Core.UIItems.WindowItems;
 using ViewAccessors;
 
-namespace MathService
+namespace _MathService
 {
-    public class Test
+    public class MathService
     {
-        public string CalculationDecomposition(AccessorBase accessor, string number)
+        private Window window;
+        public MathService(Window window)
         {
-            accessor.textBox.Text = number;
-            accessor.decompButton.Click();
-            string result = accessor.resultLabel.Text;
+            this.window = window;
+        }
+
+        public string CalculationDecomposition(string number)
+        {
+            var accessor = new MainWindowAccessor(window);
+            accessor.Number.Text = number;
+            accessor.DecomposeButton.Click();
+            string result = accessor.Answer.Text;
             return result;
         }
 
-        public string CalculationPhiFunction(DialogAccessor accessor, string number)
-        {
-            accessor.comboBox.Select("Phi function");
-            accessor.textBox.Text = number;
-            accessor.calculateButton.Click();
-            string result = accessor.resultLabel.Text;
-            return result;
-        }
+        //public string CalculationPhiFunction(string number)
+        //{
+        //    accessor.comboBox.Select("Phi function");
+        //    accessor.textBox.Text = number;
+        //    accessor.calculateButton.Click();
+        //    string result = accessor.resultLabel.Text;
+        //    return result;
+        //}
     }
 }

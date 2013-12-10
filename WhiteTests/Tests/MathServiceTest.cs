@@ -1,7 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using White.Core.UIItems.WindowItems;
 using ViewAccessors;
-using MathService;
+using _MathService;
 using Services;
 using White.Core;
 using System.IO;
@@ -11,7 +11,7 @@ namespace MathServiceTest
     [TestClass]
     public class MathServiceTest
     {
-        Test test;
+        //_MathService test;
         AccessorBase accessor;
         DialogAccessor dialogAccessor;
         Context context;
@@ -19,26 +19,26 @@ namespace MathServiceTest
         [TestInitialize]
         public void Initialize()
         {
-            test = new Test();
+            //test = new MathService();
             context = new Context();
-            accessor = new AccessorBase(context.getWindow());
+            //accessor = new AccessorBase(context.getWindow());
         }
 
         [TestMethod]
         public void DecompositionTest()
         { 
             string answer = "Representation for 6 includes: \n2\n3\n";
-            string result = test.CalculationDecomposition(accessor, "6");
+            string result = context.MathService.CalculationDecomposition("6");
             Assert.AreEqual(result, answer);
         }
 
-        [TestMethod]
-        public void PhiFunctionTest()
-        {
-            dialogAccessor = new DialogAccessor(context.application);
-            string answer = "Phi funcion for 6:\n2";
-            string result = test.CalculationPhiFunction(dialogAccessor, "6");
-            Assert.AreEqual(result, answer);
-        }
+        //[TestMethod]
+        //public void PhiFunctionTest()
+        //{
+        //    dialogAccessor = new DialogAccessor(context.application);
+        //    string answer = "Phi funcion for 6:\n2";
+        //    string result = test.CalculationPhiFunction(dialogAccessor, "6");
+        //    Assert.AreEqual(result, answer);
+        //}
     }
 }

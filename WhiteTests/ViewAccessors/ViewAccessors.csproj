@@ -74,10 +74,10 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <GenerateAccessor Include="..\..\TestApps\Cannonical representation for number\Cannonical representation for number\MainWindow.xaml">
+    <None Include="..\..\TestApps\Cannonical representation for number\Cannonical representation for number\MainWindow.xaml">
       <Link>Accessors\MainWindow.xaml</Link>
       <SubType>Designer</SubType>
-    </GenerateAccessor>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="generateAccessorAction.targets" />
