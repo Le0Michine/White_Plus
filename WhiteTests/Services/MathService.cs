@@ -12,30 +12,18 @@ namespace MathService
     {
         public string CalculationDecomposition(AccessorBase accessor, string number)
         {
-            var window = accessor.window;
-            var textBox = window.Get<White.Core.UIItems.TextBox>();
-            textBox.Text = number;
-            var decompButton = window.Get<White.Core.UIItems.Button>("DecomposeButton");
-            decompButton.Click();
-            var resultLabel = window.Get<White.Core.UIItems.Label>("Answer");
-            string result = resultLabel.Text;
-            window.Close();
+            accessor.textBox.Text = number;
+            accessor.decompButton.Click();
+            string result = accessor.resultLabel.Text;
             return result;
         }
 
         public string CalculationPhiFunction(DialogAccessor accessor, string number)
         {
-            var window = accessor.dialogWindow;
-            var comboBox = window.Get<White.Core.UIItems.ListBoxItems.ComboBox>();
-            comboBox.Select("Phi function");
-            var textBox = window.Get<White.Core.UIItems.TextBox>();
-            textBox.Text = number;
-            var calculateButton = window.Get<White.Core.UIItems.Button>("Calculation");
-            calculateButton.Click();
-            var resultLabel = window.Get<White.Core.UIItems.Label>("AnsForComboBox");
-            string result = resultLabel.Text;
-            //accessor.dialogWindow.Close();
-            //accessor.window.Close();
+            accessor.comboBox.Select("Phi function");
+            accessor.textBox.Text = number;
+            accessor.calculateButton.Click();
+            string result = accessor.resultLabel.Text;
             return result;
         }
     }

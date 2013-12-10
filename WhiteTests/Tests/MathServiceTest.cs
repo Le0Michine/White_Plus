@@ -35,7 +35,7 @@ namespace MathServiceTest
         [TestMethod]
         public void PhiFunctionTest()
         {
-            dialogAccessor = new DialogAccessor();
+            dialogAccessor = new DialogAccessor(context.application);
             string answer = "Phi funcion for 6:\n2";
             string result = test.CalculationPhiFunction(dialogAccessor, "6");
             Assert.AreEqual(result, answer);
