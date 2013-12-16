@@ -112,6 +112,7 @@ namespace Cannonical_representation_of_number
         private void Button_More_Functions(object sender, RoutedEventArgs e)
         {
             OtherFunctions appWindow = new OtherFunctions();
+            appWindow.Owner = this;
             appWindow.InitializeComponent();
             appWindow.Show();
         }

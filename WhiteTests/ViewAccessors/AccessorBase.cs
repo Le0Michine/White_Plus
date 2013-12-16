@@ -11,19 +11,20 @@ namespace ViewAccessors
     public class AccessorBase
     {
         public Window window;
-        public White.Core.UIItems.TextBox textBox;
-        public White.Core.UIItems.Button decompButton;
-        public White.Core.UIItems.Label resultLabel;
 
-        public AccessorBase(Window appWindow) 
+        virtual public string Title { get; set; }
+
+        public AccessorBase(Window window) 
         {
-            window = appWindow;
-
-            //textBox = window.Get<White.Core.UIItems.TextBox>();
-            //decompButton = window.Get<White.Core.UIItems.Button>("DecomposeButton");
-            //resultLabel = window.Get<White.Core.UIItems.Label>("Answer");
+            this.window = window;
         }
         public AccessorBase() { }
+
+        public DialogAccessor<MainWindowAccessor> getDialog()
+        {
+            var dialogAccessor = new DialogAccessor<MainWindowAccessor>(window);
+            return dialogAccessor;
+        }
 
         ~AccessorBase()
         {

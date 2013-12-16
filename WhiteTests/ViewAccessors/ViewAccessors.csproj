@@ -65,6 +65,7 @@
   <ItemGroup>
     <Compile Include="Accessors\MainWindowAccessor.cs" />
     <Compile Include="AccessorBase.cs" />
+    <Compile Include="Accessors\OtherFunctionsAccessor.cs" />
     <Compile Include="DialogAccessor.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -76,6 +77,12 @@
   <ItemGroup>
     <None Include="..\..\TestApps\Cannonical representation for number\Cannonical representation for number\MainWindow.xaml">
       <Link>Accessors\MainWindow.xaml</Link>
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\TestApps\Cannonical representation for number\Cannonical representation for number\OtherFunctions.xaml">
+      <Link>Accessors\OtherFunctions.xaml</Link>
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>

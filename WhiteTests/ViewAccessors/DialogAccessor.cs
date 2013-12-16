@@ -5,32 +5,24 @@ using System.Text;
 using White.Core;
 using White.Core.UIItems.WindowItems;
 
+
 namespace ViewAccessors
 {
-    public class DialogAccessor
+    public class DialogAccessor<T> where T: AccessorBase, new()
     {
         public Window window;
-        public Window dialogWindow;
-        public White.Core.UIItems.ListBoxItems.ComboBox comboBox;
-        public White.Core.UIItems.TextBox textBox;
-        public White.Core.UIItems.Button calculateButton;
-        public White.Core.UIItems.Label resultLabel;
+        private T Taccessor;
+        public OtherFunctionsAccessor accessor;
 
-        public DialogAccessor(Application application)
+        public DialogAccessor(Window window)
         {
-            var window = application.GetWindow("Decomposition");
-            var moreFuncButton = window.Get<White.Core.UIItems.Button>("MoreFunctions");
-            moreFuncButton.Click();
-            dialogWindow = application.GetWindow("OtherFunctions");
-            comboBox = dialogWindow.Get<White.Core.UIItems.ListBoxItems.ComboBox>();
-            textBox = dialogWindow.Get<White.Core.UIItems.TextBox>();
-            calculateButton = dialogWindow.Get<White.Core.UIItems.Button>("Calculation");
-            resultLabel = dialogWindow.Get<White.Core.UIItems.Label>("AnsForComboBox");
+            Taccessor = new T();
+            this.window = window.ModalWindow(Taccessor.Title);
+            accessor = new OtherFunctionsAccessor(window);
         }
 
         ~DialogAccessor()
         {
-            dialogWindow.Close();
             window.Close();
         }
     }

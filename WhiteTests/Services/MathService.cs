@@ -25,13 +25,16 @@ namespace _MathService
             return result;
         }
 
-        //public string CalculationPhiFunction(string number)
-        //{
-        //    accessor.comboBox.Select("Phi function");
-        //    accessor.textBox.Text = number;
-        //    accessor.calculateButton.Click();
-        //    string result = accessor.resultLabel.Text;
-        //    return result;
-        //}
+        public string CalculationPhiFunction(string number)
+        {
+            var accessor = new MainWindowAccessor(window);
+            accessor.MoreFunctions.Click();
+            DialogAccessor<MainWindowAccessor> dialogAccessor = accessor.getDialog();
+            dialogAccessor.accessor.comboBox.Select("Phi function");
+            dialogAccessor.accessor.SecondTextBox.Text = number;
+            dialogAccessor.accessor.Calculation.Click();
+            string result = dialogAccessor.accessor.AnsForComboBox.Text;
+            return result;
+        }
     }
 }
