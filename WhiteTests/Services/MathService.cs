@@ -29,11 +29,11 @@ namespace _MathService
         {
             var accessor = new MainWindowAccessor(window);
             accessor.MoreFunctions.Click();
-            DialogAccessor<MainWindowAccessor> dialogAccessor = accessor.getDialog();
-            dialogAccessor.accessor.comboBox.Select("Phi function");
-            dialogAccessor.accessor.SecondTextBox.Text = number;
-            dialogAccessor.accessor.Calculation.Click();
-            string result = dialogAccessor.accessor.AnsForComboBox.Text;
+            OtherFunctionsAccessor dialogAccessor = new OtherFunctionsAccessor(window);
+            dialogAccessor.comboBox.Select("Phi function");
+            dialogAccessor.SecondTextBox.Text = number;
+            dialogAccessor.Calculation.Click();
+            string result = dialogAccessor.AnsForComboBox.Text;
             return result;
         }
     }

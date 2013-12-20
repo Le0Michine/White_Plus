@@ -7,7 +7,7 @@ namespace Services
 {
     public class Context
     {
-        public Application application;
+        private Application application;
         private Window window;
         private MathService mathService;
         public Window Window
