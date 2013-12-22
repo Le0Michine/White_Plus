@@ -36,5 +36,17 @@ namespace _MathService
             string result = dialogAccessor.AnsForComboBox.Text;
             return result;
         }
+
+        public string IsNumberPrime(string number)
+        {
+            var accessor = new MainWindowAccessor(window);
+            accessor.MoreFunctions.Click();
+            OtherFunctionsAccessor dialogAccessor = new OtherFunctionsAccessor(window);
+            dialogAccessor.comboBox.Select("Is number prime?");
+            dialogAccessor.SecondTextBox.Text = number;
+            dialogAccessor.Calculation.Click();
+            string result = dialogAccessor.AnsForComboBox.Text;
+            return result;
+        }
     }
 }

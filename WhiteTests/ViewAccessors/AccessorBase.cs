@@ -8,7 +8,7 @@ using White.Core.UIItems.Finders;
 
 namespace ViewAccessors
 {
-    public class AccessorBase//<T> where T:new()
+    public class AccessorBase
     {
         public Window window;
 
@@ -19,12 +19,6 @@ namespace ViewAccessors
             this.window = window;
         }
         public AccessorBase() { }
-
-        //public DialogAccessor/*<AccessorBase>*/<T> getDialog()
-        //{
-        //    var dialogAccessor = new DialogAccessor/*<AccessorBase>*/<T>(window);
-        //    return dialogAccessor;
-        //}
 
         ~AccessorBase()
         {

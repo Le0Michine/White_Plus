@@ -34,5 +34,29 @@ namespace MathServiceTest
             string result = context.MathService.CalculationPhiFunction("6");
             Assert.AreEqual(result, answer);
         }
+
+        [TestMethod]
+        public void PrimeNumberTest()
+        {
+            string answer = "6 is not prime";
+            string result = context.MathService.IsNumberPrime("6");
+            Assert.AreEqual(result, answer);
+        }
+
+        [TestMethod]
+        public void IncorrectInputTest()
+        {
+            string answer = "Incorrect input";
+            string result = context.MathService.IsNumberPrime("something");
+            Assert.AreEqual(result, answer);
+        }
+
+        [TestMethod]
+        public void EmptyField()
+        {
+            string answer = "Field is empty";
+            string result = context.MathService.CalculationDecomposition("");
+            Assert.AreEqual(result, answer);
+        }
     }
 }
