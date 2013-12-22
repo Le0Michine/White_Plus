@@ -65,6 +65,7 @@
   <ItemGroup>
     <Compile Include="Accessors\MainWindowAccessor.cs" />
     <Compile Include="AccessorBase.cs" />
+    <Compile Include="Accessors\OtherFunctionsAccessor.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Tools\White\src\TestStack.White\TestStack.White.csproj">
@@ -75,6 +76,12 @@
   <ItemGroup>
     <GenerateAccessor Include="..\..\TestApps\Cannonical representation for number\Cannonical representation for number\MainWindow.xaml">
       <Link>Accessors\MainWindow.xaml</Link>
+      <SubType>Designer</SubType>
+    </GenerateAccessor>
+  </ItemGroup>
+  <ItemGroup>
+    <GenerateAccessor Include="..\..\TestApps\Cannonical representation for number\Cannonical representation for number\OtherFunctions.xaml">
+      <Link>Accessors\OtherFunctions.xaml</Link>
       <SubType>Designer</SubType>
     </GenerateAccessor>
   </ItemGroup>

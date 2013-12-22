@@ -10,12 +10,12 @@ namespace Cannonical_representation_of_number
 	/// <summary>
 	/// Interaction logic for MainWindow.xaml
 	/// </summary>
-	public partial class MainWindow : Window
-	{
-		public MainWindow()
-		{
-			InitializeComponent();
-		}
+    public partial class MainWindow : Window
+    {
+        public MainWindow()
+        {
+            InitializeComponent();
+        }
 
         private void Button_Close_Click(object sender, RoutedEventArgs e)
         {
@@ -28,17 +28,16 @@ namespace Cannonical_representation_of_number
             if (number != null) number.Text = "enter number";
         }
 
-	    private void Number_GotFocus(object sender, RoutedEventArgs e)
-	    {
-	        var number = e.Source as TextBox;
-	        if (number != null) number.Clear();
-	    }
-
-
-	    private String Represetation(int n)
+        private void Number_GotFocus(object sender, RoutedEventArgs e)
         {
-            var ans = String.Format("Representation for " + n +  " includes: \n");
-            var devisor = new List<int>();     
+            var number = e.Source as TextBox;
+            if (number != null) number.Clear();
+        }
+
+        private String Represetation(int n)
+        {
+            var ans = String.Format("Representation for " + n + " includes: \n");
+            var devisor = new List<int>();
             for (int i = 2; i < n / 2 + 1; i++)
             {
                 if (isDevided(n, i))
@@ -46,9 +45,9 @@ namespace Cannonical_representation_of_number
                     devisor.Add(i);
                 }
             }
-            
-            
-            for (int i = 1; i < devisor.Count; i++) 
+
+
+            for (int i = 1; i < devisor.Count; i++)
             {
                 for (int j = 0; j < i; j++)
                 {
@@ -109,5 +108,13 @@ namespace Cannonical_representation_of_number
                 if (t != null) t.Clear();
             }
         }
-	}
+
+        private void Button_More_Functions(object sender, RoutedEventArgs e)
+        {
+            OtherFunctions appWindow = new OtherFunctions();
+            appWindow.Owner = this;
+            appWindow.InitializeComponent();
+            appWindow.Show();
+        }
+    }
 }

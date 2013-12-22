@@ -17,7 +17,8 @@ namespace Accessor_Generator
 					{"TextBlock", "Label"},
 					{"Label", "Label"},
 					{"DataGrid", "ListView"},
-					{"ComboBox", "ListBoxItems"},
+					//{"ComboBox", "ListBoxItems"},
+                    {"ComboBox", "ComboBox"},
 
 					{"List", "ListBox"},
 					{"Slider", "Slider"},
@@ -70,15 +71,27 @@ namespace Accessor_Generator
                 var nameSpace = new CodeNamespace(@"ViewAccessors");
                 var imports = new CodeNamespace();
                 imports.Imports.Add(new CodeNamespaceImport("System"));
-                //imports.Imports.Add(new CodeNamespaceImport("White.Core"));
+                imports.Imports.Add(new CodeNamespaceImport("White.Core"));
                 imports.Imports.Add(new CodeNamespaceImport("White.Core.UIItems"));
-                //imports.Imports.Add(new CodeNamespaceImport("White.Core.UIItems.WindowItems"));
+                imports.Imports.Add(new CodeNamespaceImport("White.Core.UIItems.ListBoxItems"));
+                imports.Imports.Add(new CodeNamespaceImport("White.Core.UIItems.WindowItems"));
 
                 accessorClass.Namespaces.Add(imports);
                 accessorClass.Namespaces.Add(nameSpace);
 
                 var accessorClassDeclaration = new CodeTypeDeclaration(className + "Accessor");
                 accessorClassDeclaration.BaseTypes.Add("AccessorBase");
+
+                CodeConstructor defaultConstructor = new CodeConstructor();
+                defaultConstructor.Attributes = MemberAttributes.Public;
+                accessorClassDeclaration.Members.Add(defaultConstructor);
+
+                CodeConstructor windowConstructor = new CodeConstructor();
+                windowConstructor.Attributes = MemberAttributes.Public;
+                windowConstructor.Parameters.Add(new CodeParameterDeclarationExpression("Window", "window"));
+                windowConstructor.BaseConstructorArgs.Add(new CodeVariableReferenceExpression("window"));
+                accessorClassDeclaration.Members.Add(windowConstructor);
+      
                 ParseXaml(reader, imports, accessorClassDeclaration);
                 nameSpace.Types.Add(accessorClassDeclaration);
                 String sourceFile = GenerateSourceFile(_outputDirectory + className + "Accessor", accessorClass);
